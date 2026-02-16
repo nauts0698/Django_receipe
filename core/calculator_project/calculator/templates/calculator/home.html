@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Django Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input type="number" id="num1" step="any" name="num1" placeholder="Enter first number" required>
+        <br><br>
+
+        <input type="number" step="any" name="num2" placeholder="Enter second number" required>
+        <br><br>
+
+        
+        
+
+        <select name="operation">
+            <option value="add">Add (+)</option>
+            <option value="subtract">Subtract (-)</option>
+            <option value="multiply">Multiply (*)</option>
+            <option value="divide">Divide (/)</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    
+
+    {% if result is not None %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+
+</body>
+</html>
+
+<script>
+            let value = document.getElementById("num1").value;
+            
+            console.log("value-->", value);
+</script>
