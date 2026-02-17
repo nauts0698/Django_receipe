@@ -64,6 +64,8 @@ def update_receipe(request,id):
 
     context ={ 'receipe' : queryset}
 
+    
+
     return render(request, 'update_receipe.html' , context)
     # return redirect('/receipes/')
 
